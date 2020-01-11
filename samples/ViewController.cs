@@ -1,6 +1,7 @@
 ﻿using Foundation;
 using System;
 using UIKit;
+using Xamarin.iOS.Worldpay.Access.Checkout;
 
 namespace SampleApp.iOS
 {
@@ -14,6 +15,8 @@ namespace SampleApp.iOS
         {
             base.ViewDidLoad();
             // Perform any additional setup after loading the view, typically from a nib.
+
+            var a = new PANView();
         }
 
         public override void DidReceiveMemoryWarning()
