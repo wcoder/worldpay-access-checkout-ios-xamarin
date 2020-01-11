@@ -1,66 +1,98 @@
-﻿using System;
-
-using ObjCRuntime;
+﻿using ObjCRuntime;
 using Foundation;
 using UIKit;
 
-namespace NativeLibrary
+namespace Xamarin.iOS.Worldpay.Access.Checkout
 {
-    // The first step to creating a binding is to add your native library ("libNativeLibrary.a")
-    // to the project by right-clicking (or Control-clicking) the folder containing this source
-    // file and clicking "Add files..." and then simply select the native library (or libraries)
-    // that you want to bind.
-    //
-    // When you do that, you'll notice that MonoDevelop generates a code-behind file for each
-    // native library which will contain a [LinkWith] attribute. VisualStudio auto-detects the
-    // architectures that the native library supports and fills in that information for you,
-    // however, it cannot auto-detect any Frameworks or other system libraries that the
-    // native library may depend on, so you'll need to fill in that information yourself.
-    //
-    // Once you've done that, you're ready to move on to binding the API...
-    //
-    //
-    // Here is where you'd define your API definition for the native Objective-C library.
-    //
-    // For example, to bind the following Objective-C class:
-    //
-    //     @interface Widget : NSObject {
-    //     }
-    //
-    // The C# binding would look like this:
-    //
-    //     [BaseType (typeof (NSObject))]
-    //     interface Widget {
-    //     }
-    //
-    // To bind Objective-C properties, such as:
-    //
-    //     @property (nonatomic, readwrite, assign) CGPoint center;
-    //
-    // You would add a property definition in the C# interface like so:
-    //
-    //     [Export ("center")]
-    //     CGPoint Center { get; set; }
-    //
-    // To bind an Objective-C method, such as:
-    //
-    //     -(void) doSomething:(NSObject *)object atIndex:(NSInteger)index;
-    //
-    // You would add a method definition to the C# interface like so:
-    //
-    //     [Export ("doSomething:atIndex:")]
-    //     void DoSomething (NSObject object, int index);
-    //
-    // Objective-C "constructors" such as:
-    //
-    //     -(id)initWithElmo:(ElmoMuppet *)elmo;
-    //
-    // Can be bound as:
-    //
-    //     [Export ("initWithElmo:")]
-    //     IntPtr Constructor (ElmoMuppet elmo);
-    //
-    // For more information, see https://aka.ms/ios-binding
-    //
+    // @interface CVVView : UIView
+    [BaseType(typeof(UIView), Name = "_TtC17AccessCheckoutSDK7CVVView")]
+    interface CVVView
+    {
+        // -(instancetype _Nullable)initWithCoder:(NSCoder * _Nonnull)aDecoder __attribute__((objc_designated_initializer));
+        //[Export("initWithCoder:")]
+        //[DesignatedInitializer]
+        //IntPtr Constructor(NSCoder aDecoder);
+
+        // -(instancetype _Nonnull)initWithFrame:(CGRect)frame __attribute__((objc_designated_initializer));
+        //[Export("initWithFrame:")]
+        //[DesignatedInitializer]
+        //IntPtr Constructor(CGRect frame);
+    }
+
+    // @interface AccessCheckoutSDK_Swift_217 (CVVView) <UITextFieldDelegate>
+    //[Category]
+    //[BaseType(typeof(CVVView))]
+    //interface CVVView_AccessCheckoutSDK_Swift_217 : IUITextFieldDelegate
+    //{
+    //    // -(void)textFieldDidEndEditing:(UITextField * _Nonnull)textField;
+    //    [Export("textFieldDidEndEditing:")]
+    //    void TextFieldDidEndEditing(UITextField textField);
+
+    //    // -(BOOL)textField:(UITextField * _Nonnull)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString * _Nonnull)string __attribute__((warn_unused_result));
+    //    [Export("textField:shouldChangeCharactersInRange:replacementString:")]
+    //    bool TextField(UITextField textField, NSRange range, string @string);
+    //}
+
+    // @interface ExpiryDateView : UIView
+    [BaseType(typeof(UIView), Name = "_TtC17AccessCheckoutSDK14ExpiryDateView")]
+    interface ExpiryDateView
+    {
+        // -(instancetype _Nullable)initWithCoder:(NSCoder * _Nonnull)aDecoder __attribute__((objc_designated_initializer));
+        //[Export("initWithCoder:")]
+        //[DesignatedInitializer]
+        //IntPtr Constructor(NSCoder aDecoder);
+
+        // -(instancetype _Nonnull)initWithFrame:(CGRect)frame __attribute__((objc_designated_initializer));
+        //[Export("initWithFrame:")]
+        //[DesignatedInitializer]
+        //IntPtr Constructor(CGRect frame);
+    }
+
+    // @interface AccessCheckoutSDK_Swift_235 (ExpiryDateView) <UITextFieldDelegate>
+    //[Category]
+    //[BaseType(typeof(ExpiryDateView))]
+    //interface ExpiryDateView_AccessCheckoutSDK_Swift_235 : IUITextFieldDelegate
+    //{
+    //    // -(void)textFieldDidEndEditing:(UITextField * _Nonnull)textField;
+    //    [Export("textFieldDidEndEditing:")]
+    //    void TextFieldDidEndEditing(UITextField textField);
+
+    //    // -(BOOL)textField:(UITextField * _Nonnull)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString * _Nonnull)string __attribute__((warn_unused_result));
+    //    [Export("textField:shouldChangeCharactersInRange:replacementString:")]
+    //    bool TextField(UITextField textField, NSRange range, string @string);
+    //}
+
+    // @interface PANView : UIView
+    [BaseType(typeof(UIView), Name = "_TtC17AccessCheckoutSDK7PANView")]
+    interface PANView
+    {
+        // @property (nonatomic, weak) UIImageView * _Null_unspecified imageView __attribute__((iboutlet));
+        [Export("imageView", ArgumentSemantic.Weak)]
+        UIImageView ImageView { get; set; }
+
+        // -(instancetype _Nullable)initWithCoder:(NSCoder * _Nonnull)aDecoder __attribute__((objc_designated_initializer));
+        //[Export("initWithCoder:")]
+        //[DesignatedInitializer]
+        //IntPtr Constructor(NSCoder aDecoder);
+
+        // -(instancetype _Nonnull)initWithFrame:(CGRect)frame __attribute__((objc_designated_initializer));
+        //[Export("initWithFrame:")]
+        //[DesignatedInitializer]
+        //IntPtr Constructor(CGRect frame);
+    }
+
+    // @interface AccessCheckoutSDK_Swift_255 (PANView) <UITextFieldDelegate>
+    //[Category]
+    //[BaseType(typeof(PANView))]
+    //interface PANView_AccessCheckoutSDK_Swift_255 : IUITextFieldDelegate
+    //{
+    //    // -(void)textFieldDidEndEditing:(UITextField * _Nonnull)textField;
+    //    [Export("textFieldDidEndEditing:")]
+    //    void TextFieldDidEndEditing(UITextField textField);
+
+    //    // -(BOOL)textField:(UITextField * _Nonnull)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString * _Nonnull)string __attribute__((warn_unused_result));
+    //    [Export("textField:shouldChangeCharactersInRange:replacementString:")]
+    //    bool TextField(UITextField textField, NSRange range, string @string);
+    //}
 }
 
