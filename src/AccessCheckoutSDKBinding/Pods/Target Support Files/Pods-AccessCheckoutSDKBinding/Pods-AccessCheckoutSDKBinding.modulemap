@@ -1,0 +1,6 @@
+framework module Pods_AccessCheckoutSDKBinding {
+  umbrella header "Pods-AccessCheckoutSDKBinding-umbrella.h"
+
+  export *
+  module * { export * }
+}

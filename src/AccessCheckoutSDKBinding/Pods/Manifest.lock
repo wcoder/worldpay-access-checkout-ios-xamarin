@@ -1,0 +1,16 @@
+PODS:
+  - AccessCheckoutSDK (1.2.1)
+
+DEPENDENCIES:
+  - AccessCheckoutSDK
+
+SPEC REPOS:
+  trunk:
+    - AccessCheckoutSDK
+
+SPEC CHECKSUMS:
+  AccessCheckoutSDK: a4b9a32452fd65cf60d08b82af7d234a58185fa2
+
+PODFILE CHECKSUM: dd8ffaff545d5d3330818a648c9f9be181bb7c4a
+
+COCOAPODS: 1.8.4
