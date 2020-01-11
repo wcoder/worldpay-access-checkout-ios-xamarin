@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 
-//@import AccessCheckoutSDK;
+#import <AccessCheckoutSDK-Swift.h>
 
 @interface ViewController ()
 
@@ -20,10 +20,14 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-//    PANView *panView = [PANView init];
     
+//    PANView *pv= [[PANView alloc] init];
+        
+    MySuperClass *sc = [[MySuperClass alloc] init];
+
+    [sc testLog];
     
-    
+//    NSString *s = [sc getValue];
 }
 
 

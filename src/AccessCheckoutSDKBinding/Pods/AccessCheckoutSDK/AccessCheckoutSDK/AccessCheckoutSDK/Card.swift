@@ -1,5 +1,19 @@
 import Foundation
 
+
+@objc open class MySuperClass : NSObject
+{   
+    @objc open func getValue() -> NSString
+    {
+        return "Value came from Card.swift!";
+    }
+    
+    @objc open func testLog()
+    {
+        print("Call from Card.swift!");
+    }
+}
+
 /// A payment card. Manages card input and validation.
 public protocol Card: CardViewDelegate {
     

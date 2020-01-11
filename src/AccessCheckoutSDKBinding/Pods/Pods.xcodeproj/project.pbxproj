@@ -65,7 +65,7 @@
 		923CF229916800D93F2DADC3855F7E71 /* ExpiryDateView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = ExpiryDateView.xib; path = AccessCheckoutSDK/AccessCheckoutSDK/ExpiryDateView.xib; sourceTree = "<group>"; };
 		95825E49F9D7B1542B9EAD353ABACFB6 /* AccessCheckoutSDK.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AccessCheckoutSDK.xcconfig; sourceTree = "<group>"; };
 		9CF92890C566D8193F89E1279D1CA163 /* Pods-AccessCheckoutSDKBinding-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AccessCheckoutSDKBinding-umbrella.h"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9DD04D0B6E7B11B49B26D199F0BD4115 /* CardConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CardConfiguration.swift; path = AccessCheckoutSDK/AccessCheckoutSDK/CardConfiguration.swift; sourceTree = "<group>"; };
 		9F9FE95DC5616C13A2DB271D00FEB6FF /* Pods-AccessCheckoutSDKBinding-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AccessCheckoutSDKBinding-frameworks.sh"; sourceTree = "<group>"; };
 		A6D3F9677C26DC4193284F9B33807825 /* AccessCheckoutSDK.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = AccessCheckoutSDK.modulemap; sourceTree = "<group>"; };
@@ -78,10 +78,10 @@
 		E40CD251A568332BC4F1125C4B9AACA0 /* AccessDiscovery.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AccessDiscovery.swift; path = AccessCheckoutSDK/AccessCheckoutSDK/AccessDiscovery.swift; sourceTree = "<group>"; };
 		E643546DE91DC85913FCC4126229F333 /* AccessCheckoutSDK.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AccessCheckoutSDK.h; path = AccessCheckoutSDK/AccessCheckoutSDK/AccessCheckoutSDK.h; sourceTree = "<group>"; };
 		EC47005DFFF7835C628F84F93FA5DF9A /* Pods-AccessCheckoutSDKBinding-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AccessCheckoutSDKBinding-Info.plist"; sourceTree = "<group>"; };
-		ED5FA70A36ECD60FE5D369439DCC0E7C /* Pods_AccessCheckoutSDKBinding.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_AccessCheckoutSDKBinding.framework; path = "Pods-AccessCheckoutSDKBinding.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED5FA70A36ECD60FE5D369439DCC0E7C /* Pods_AccessCheckoutSDKBinding.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AccessCheckoutSDKBinding.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7F9039AD21E5238D9F98FAB9D7D2AC0 /* Pods-AccessCheckoutSDKBinding.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AccessCheckoutSDKBinding.debug.xcconfig"; sourceTree = "<group>"; };
 		F97625AF879B84C8304B499148680FDC /* AccessCheckoutSDK-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AccessCheckoutSDK-prefix.pch"; sourceTree = "<group>"; };
-		F9A171743205446F7D4AB1FCB3DA478A /* AccessCheckoutSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = AccessCheckoutSDK.framework; path = AccessCheckoutSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9A171743205446F7D4AB1FCB3DA478A /* AccessCheckoutSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AccessCheckoutSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCFE8AD1D559B3B52121459B064A1DC0 /* AccessCheckoutSDK-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AccessCheckoutSDK-umbrella.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -162,7 +162,6 @@
 				828F7686DA24ACDFB00C0B9F31F94645 /* Resources */,
 				DF26AE762F7224D6782EF0F98676D587 /* Support Files */,
 			);
-			name = AccessCheckoutSDK;
 			path = AccessCheckoutSDK;
 			sourceTree = "<group>";
 		};
@@ -466,6 +465,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "Target Support Files/AccessCheckoutSDK/AccessCheckoutSDK-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/AccessCheckoutSDK/AccessCheckoutSDK-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -565,6 +565,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "Target Support Files/AccessCheckoutSDK/AccessCheckoutSDK-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/AccessCheckoutSDK/AccessCheckoutSDK-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";

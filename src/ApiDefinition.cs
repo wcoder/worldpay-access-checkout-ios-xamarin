@@ -4,6 +4,14 @@ using UIKit;
 
 namespace Xamarin.iOS.Worldpay.Access.Checkout
 {
+    [BaseType(typeof(NSObject))]
+    interface MySuperClass
+    {
+        // -(NSString * _Nonnull)getValue;
+        [Export("getValue")]
+        string Value { get; }
+    }
+
     // @interface CVVView : UIView
     [BaseType(typeof(UIView), Name = "_TtC17AccessCheckoutSDK7CVVView")]
     interface CVVView
