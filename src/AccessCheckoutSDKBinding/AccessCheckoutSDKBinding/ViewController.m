@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 
-@import AccessCheckoutSDK;
+//@import AccessCheckoutSDK;
 
 @interface ViewController ()
 
@@ -20,7 +20,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    PANView *panView = [PANView init];
+//    PANView *panView = [PANView init];
     
     
     
