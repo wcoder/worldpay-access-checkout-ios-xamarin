@@ -17,6 +17,11 @@ namespace SampleApp.iOS
             // Perform any additional setup after loading the view, typically from a nib.
 
             var a = new PANView();
+
+            var b = new MySuperClass();
+            var str = b.Value;
+
+            var r = b.DoWork("C# value1", "C# value2");
         }
 
         public override void DidReceiveMemoryWarning()

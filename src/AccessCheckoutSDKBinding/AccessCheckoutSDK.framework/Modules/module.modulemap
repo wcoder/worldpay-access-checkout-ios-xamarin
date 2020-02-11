@@ -1,0 +1,11 @@
+framework module AccessCheckoutSDK {
+  umbrella header "AccessCheckoutSDK-umbrella.h"
+
+  export *
+  module * { export * }
+}
+
+module AccessCheckoutSDK.Swift {
+    header "AccessCheckoutSDK-Swift.h"
+    requires objc
+}
