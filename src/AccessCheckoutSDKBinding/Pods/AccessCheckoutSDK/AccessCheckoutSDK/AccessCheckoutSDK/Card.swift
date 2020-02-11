@@ -12,6 +12,11 @@ import Foundation
     {
         print("Call from Card.swift!");
     }
+    
+    @objc open func doWork(a: NSString, b: NSString) -> NSString
+    {
+        return "Value A:" + (a as String) + "; B:" + (b as String) + ";" as NSString;
+    }
 }
 
 /// A payment card. Manages card input and validation.

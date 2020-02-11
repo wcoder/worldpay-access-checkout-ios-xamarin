@@ -20,14 +20,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    
-//    PANView *pv= [[PANView alloc] init];
-        
+
     MySuperClass *sc = [[MySuperClass alloc] init];
 
     [sc testLog];
-    
-//    NSString *s = [sc getValue];
+                        
+    NSString *res = [sc doWorkWithA:@"value1" b:@"value2"];
 }
 
 

@@ -20,6 +20,8 @@ namespace SampleApp.iOS
 
             var b = new MySuperClass();
             var str = b.Value;
+
+            var r = b.DoWork("C# value1", "C# value2");
         }
 
         public override void DidReceiveMemoryWarning()
