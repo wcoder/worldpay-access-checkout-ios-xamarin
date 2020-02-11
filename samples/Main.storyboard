@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,14 +18,62 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dKS-uj-cef">
-                                <rect key="frame" x="101" y="266" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dKS-uj-cef" customClass="_TtC17AccessCheckoutSDK7PANView" customModuleProvider="target">
+                                <rect key="frame" x="20" y="33" width="374" height="44"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint id="200" firstAttribute="height" constant="44"/>
+                                </constraints>
                             </view>
+                            <view contentMode="scaleToFill" id="614" translatesAutoresizingMaskIntoConstraints="NO" customClass="_TtC17AccessCheckoutSDK14ExpiryDateView">
+                                <rect key="frame" x="20" y="85" width="374" height="44"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint id="618" firstAttribute="height" constant="44"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" id="648" translatesAutoresizingMaskIntoConstraints="NO" customClass="_TtC17AccessCheckoutSDK7CVVView">
+                                <rect key="frame" x="20" y="137" width="374" height="44"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint id="654" firstAttribute="height" constant="44"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="649" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="167" y="273" width="80" height="30"/>
+                                <state key="normal" title="Submit"/>
+                                <constraints>
+                                    <constraint id="698" firstAttribute="width" constant="80"/>
+                                </constraints>
+                            </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="650" hidesWhenStopped="YES" hidden="YES">
+                                <rect key="frame" x="197" y="326" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint id="197" firstItem="dKS-uj-cef" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="13"/>
+                            <constraint id="198" firstItem="dKS-uj-cef" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin"/>
+                            <constraint id="199" firstItem="dKS-uj-cef" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin"/>
+                            <constraint id="615" firstAttribute="trailingMargin" secondItem="614" secondAttribute="trailing"/>
+                            <constraint id="616" firstItem="614" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin"/>
+                            <constraint id="617" firstItem="614" firstAttribute="top" secondItem="dKS-uj-cef" secondAttribute="bottom" constant="8"/>
+                            <constraint id="651" firstItem="648" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin"/>
+                            <constraint id="652" firstItem="648" firstAttribute="top" secondItem="614" secondAttribute="bottom" constant="8"/>
+                            <constraint id="653" firstItem="648" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin"/>
+                            <constraint id="655" firstItem="649" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX"/>
+                            <constraint id="656" firstItem="649" firstAttribute="top" secondItem="648" secondAttribute="bottom" constant="92"/>
+                            <constraint id="657" firstItem="650" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX"/>
+                            <constraint id="658" firstItem="650" firstAttribute="top" secondItem="649" secondAttribute="bottom" constant="23"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="panView" destination="dKS-uj-cef" id="name-outlet-dKS-uj-cef"/>
+                        <outlet property="expiryDateView" destination="614" id="name-outlet-614"/>
+                        <outlet property="cvvView" destination="648" id="name-outlet-648"/>
+                        <outlet property="submitButton" destination="649" id="name-outlet-649"/>
+                        <outlet property="spinner" destination="650" id="name-outlet-650"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

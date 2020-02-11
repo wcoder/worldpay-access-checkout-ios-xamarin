@@ -22,6 +22,16 @@ namespace SampleApp.iOS
             var str = b.Value;
 
             var r = b.DoWork("C# value1", "C# value2");
+
+            submitButton.TouchUpInside += SubmitButton_TouchUpInside;
+        }
+
+        private void SubmitButton_TouchUpInside(object sender, EventArgs e)
+        {
+            //var pan = panView.Text;
+            //var month = expiryDateView.Month;
+            //var year = expiryDateView.Year;
+            //var cvv = cvvView.Text;
         }
 
         public override void DidReceiveMemoryWarning()
