@@ -40,6 +40,8 @@
     <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccessCheckoutDiscovery.cs" />
+    <Compile Include="IDiscovery.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PANView.cs" />
   </ItemGroup>
@@ -48,6 +50,12 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AccessCheckoutSDK.Core\AccessCheckoutSDK.Core.csproj">
+      <Project>{eea698b7-9d32-4baa-ad7f-840daea7f4d1}</Project>
+      <Name>AccessCheckoutSDK.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

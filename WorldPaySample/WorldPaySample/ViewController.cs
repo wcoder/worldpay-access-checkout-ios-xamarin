@@ -15,6 +15,12 @@ namespace WorldPaySample
         {
             base.ViewDidAppear(animated);
 
+            var baseUrl = new NSUrl("https://try.access.worldpay.com");
+            var accessCheckoutDiscovery = new AccessCheckoutDiscovery(baseUrl);
+            accessCheckoutDiscovery.Discover(NSUrlSession.SharedSession, () =>
+            {
+                
+            });
         }
     }
 }
