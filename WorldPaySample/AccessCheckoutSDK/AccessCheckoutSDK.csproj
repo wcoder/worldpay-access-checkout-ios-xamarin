@@ -40,10 +40,15 @@
     <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccessCheckoutClient.cs" />
+    <Compile Include="AccessCheckoutClientError.cs" />
     <Compile Include="AccessCheckoutDiscovery.cs" />
+    <Compile Include="Decoder.cs" />
+    <Compile Include="IAccessClient.cs" />
     <Compile Include="IDiscovery.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PANView.cs" />
+    <Compile Include="Result.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="PANView.xib" />

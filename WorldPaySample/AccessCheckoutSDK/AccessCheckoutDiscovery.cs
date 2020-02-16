@@ -101,7 +101,7 @@ namespace AccessCheckoutSDK
 
             try
             {
-                var accessCheckoutResponse = DecodeJson(jsonData);
+                var accessCheckoutResponse = Decoder.DecodeJson<AccessCheckoutResponse>(jsonData);
                 if (accessCheckoutResponse != null)
                 {
                     var serviceMap = accessCheckoutResponse.Links.Endpoints.GetValueOrDefault(linkId);
@@ -118,14 +118,6 @@ namespace AccessCheckoutSDK
             }
 
             return resultUrl;
-        }
-
-        // line: 74
-        private static AccessCheckoutResponse DecodeJson(NSData data)
-        {
-            var json = data.ToString();
-            var obj = JsonConvert.DeserializeObject<AccessCheckoutResponse>(json);
-            return obj;
         }
     }
 }
