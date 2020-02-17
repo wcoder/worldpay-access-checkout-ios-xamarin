@@ -15,15 +15,18 @@ namespace AccessCheckoutSDK
     {
         private readonly Exception _exception;
         private readonly string _value;
+        private readonly ResultStatus _status;
 
         private Result(string value)
         {
             _value = value;
+            _status = ResultStatus.Success;
         }
 
         private Result(Exception exception)
         {
             _exception = exception;
+            _status = ResultStatus.Failure;
         }
 
         public static Result Success(string value)
@@ -35,5 +38,19 @@ namespace AccessCheckoutSDK
         {
             return new Result(exception);
         }
+
+        public string SuccessValue => _value;
+        
+        public Exception FailureValue => _exception;
+        
+        public static implicit operator ResultStatus(Result result) => result._status;
+    }
+    
+    
+
+    public enum ResultStatus
+    {
+        Success,
+        Failure
     }
 }

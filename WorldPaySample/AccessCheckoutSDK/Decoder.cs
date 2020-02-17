@@ -9,6 +9,7 @@
 
 using Foundation;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 
 namespace AccessCheckoutSDK
 {
@@ -20,6 +21,18 @@ namespace AccessCheckoutSDK
             var json = data.ToString();
             var obj = JsonConvert.DeserializeObject<T>(json);
             return obj;
+        }
+        
+        public static NSData Encode(object obj)
+        {
+            var json = JsonConvert.SerializeObject(obj, new JsonSerializerSettings
+            {
+                ContractResolver = new DefaultContractResolver
+                {
+                    NamingStrategy = new CamelCaseNamingStrategy()
+                }
+            });
+            return NSData.FromString(json);
         }
     }
 }

@@ -93,11 +93,19 @@ namespace AccessCheckoutSDK
             var request = new NSMutableUrlRequest(url);
             request["Content-Type"] = "application/vnd.worldpay.verified-tokens-v1.hal+json";
             request.HttpMethod = "POST";
-            
-            // var tokenRequest = VerifiedTokenRequest()
-            // TODO: Add tokenRequest
-            
-            //request.Body = NSData.FromString("asd");
+
+            var tokenRequest = new VerifiedTokenRequest
+            {
+                CardNumber = pan,
+                CardExpiryDate = new CardExpiryDate
+                {
+                    Month = expiryMonth,
+                    Year = expiryYear
+                },
+                Cvc = cvv,
+                Identity = _merchantIdentifier
+            };
+            request.Body = Decoder.Encode(tokenRequest);
             
             // Add user-agent header
             var userAgent = new UserAgent(bundle);
@@ -106,21 +114,6 @@ namespace AccessCheckoutSDK
             return request;
         }
         
-        
-        // line: 159
-        private class UserAgent
-        {
-            public const string HeaderName = "X-WP-SDK";
-            private const string ValueFormat = "access-checkout-ios/{0}";
-            public UserAgent(NSBundle bundle)
-            {
-                var appVersion = bundle.ObjectForInfoDictionary("CFBundleShortVersionString")?.ToString() ?? "unknown";
-                HeaderValue = string.Format(ValueFormat, appVersion);
-            }
-
-            public string HeaderValue { get; }
-        }
-
         // line: 58
         private static void CreateSession(NSUrlRequest request, NSUrlSession urlSession,
             Action<Result> completionHandler)
@@ -130,7 +123,7 @@ namespace AccessCheckoutSDK
                 if (data is NSData sessionData)
                 {
                     var verifiedTokensResponse = Decoder.DecodeJson<AccessCheckoutResponse>(sessionData);
-                    if (verifiedTokensResponse != null)
+                    if (verifiedTokensResponse != null && verifiedTokensResponse.Links != null)
                     {
                         var link = verifiedTokensResponse.Links.Endpoints.GetValueOrDefault("verifiedTokens:session");
                         if (link != null && link.Href is string href)
@@ -163,7 +156,35 @@ namespace AccessCheckoutSDK
                 }
             }).Resume();
         }
-        
-        
+
+        // line: 159
+        private class UserAgent
+        {
+            public const string HeaderName = "X-WP-SDK";
+            private const string ValueFormat = "access-checkout-ios/{0}";
+            public UserAgent(NSBundle bundle)
+            {
+                var appVersion = bundle.ObjectForInfoDictionary("CFBundleShortVersionString")?.ToString() ?? "unknown";
+                HeaderValue = string.Format(ValueFormat, appVersion);
+            }
+
+            public string HeaderValue { get; }
+        }
+
+        // line: 136
+        private class VerifiedTokenRequest
+        {
+            public string CardNumber { get; set; }
+            public CardExpiryDate CardExpiryDate { get; set; }
+            public string Cvc { get; set; }
+            public string Identity { get; set; }
+        }
+
+        // line: 145
+        private class CardExpiryDate
+        {
+            public uint Month { get; set; }
+            public uint Year { get; set; }
+        }
     }
 }
