@@ -9,6 +9,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using AccessCheckoutSDK.Core;
 using Foundation;
 
@@ -43,8 +44,9 @@ namespace AccessCheckoutSDK
         /// <param name="urlSession"></param>
         /// <param name="completionHandler"></param>
         public void CreateSession(string pan, uint expiryMonth, uint expiryYear, string cvv, NSUrlSession urlSession,
-            Action<Result> completionHandler)
+            Action<Result<string, Exception>> completionHandler)
         {
+            var result = Result.Null<string, Exception>();
             var bundle = NSBundle.MainBundle; // TODO: check bundle
             
             // line: 100
@@ -58,7 +60,7 @@ namespace AccessCheckoutSDK
                 }
                 catch (Exception ex)
                 {
-                    completionHandler(Result.Failure(ex));
+                    completionHandler(result.Failure(ex));
                 }
             }
             else
@@ -75,12 +77,12 @@ namespace AccessCheckoutSDK
                         }
                         catch (Exception ex)
                         {
-                            completionHandler(Result.Failure(ex));
+                            completionHandler(result.Failure(ex));
                         }
                     }
                     else
                     {
-                        completionHandler(Result.Failure(new AccessCheckoutClientError(
+                        completionHandler(result.Failure(new AccessCheckoutClientError(
                             "Unable to discover services", AccessCheckoutClientErrors.Undiscoverable)));
                     }
                 });
@@ -116,10 +118,12 @@ namespace AccessCheckoutSDK
         
         // line: 58
         private static void CreateSession(NSUrlRequest request, NSUrlSession urlSession,
-            Action<Result> completionHandler)
+            Action<Result<string, Exception>> completionHandler)
         {
             urlSession.CreateDataTask(request, (data, response, error) =>
             {
+                var result = Result.Null<string, Exception>();
+                
                 if (data is NSData sessionData)
                 {
                     var verifiedTokensResponse = Decoder.DecodeJson<AccessCheckoutResponse>(sessionData);
@@ -128,20 +132,19 @@ namespace AccessCheckoutSDK
                         var link = verifiedTokensResponse.Links.Endpoints.GetValueOrDefault("verifiedTokens:session");
                         if (link != null && link.Href is string href)
                         {
-                            completionHandler(Result.Success(href));
+                            completionHandler(result.Success(href));
                             return;
                         }
                     }
 
-                    // TODO: check error decode
                     var accessCheckoutClientError = Decoder.DecodeJson<AccessCheckoutClientError>(sessionData);
                     if (accessCheckoutClientError != null)
                     {
-                        completionHandler(Result.Failure(accessCheckoutClientError));
+                        completionHandler(result.Failure(accessCheckoutClientError));
                     }
                     else
                     {
-                        completionHandler(Result.Failure(new AccessCheckoutClientError(
+                        completionHandler(result.Failure(new AccessCheckoutClientError(
                             "Failed to decode response data", AccessCheckoutClientErrors.Unknown)));
                     }
                 }
@@ -152,7 +155,7 @@ namespace AccessCheckoutSDK
                             "Unexpected response: no data or error returned",
                             AccessCheckoutClientErrors.Unknown)
                         : (Exception)new NSErrorException(error);
-                    completionHandler(Result.Failure(ex));
+                    completionHandler(result.Failure(ex));
                 }
             }).Resume();
         }

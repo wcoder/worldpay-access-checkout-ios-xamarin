@@ -37,11 +37,11 @@ namespace WorldPaySample
                             {
                                 case ResultStatus.Success:
                                     // Session is returned here
-                                    var session = result.SuccessValue;
+                                    var session = result.Success;
                                     break;
                                 case ResultStatus.Failure:
                                     // Error handling
-                                    if (result.FailureValue is AccessCheckoutClientError accessCheckoutClientError)
+                                    if (result.Failure is AccessCheckoutClientError accessCheckoutClientError)
                                     {
                                         switch (accessCheckoutClientError.ErrorName)
                                         {

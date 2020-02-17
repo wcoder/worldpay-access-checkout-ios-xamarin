@@ -32,6 +32,6 @@ namespace AccessCheckoutSDK
             uint expiryYear,
             string cvv,
             NSUrlSession urlSession,
-            Action<Result> completionHandler);
+            Action<Result<string, Exception>> completionHandler);
     }
 }
