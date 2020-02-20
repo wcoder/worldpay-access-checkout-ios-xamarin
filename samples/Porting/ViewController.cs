@@ -1,4 +1,13 @@
-﻿using Foundation;
+﻿//
+// ViewController.cs
+//
+// Author:
+//       Yauheni Pakala <evgeniy.pakalo@gmail.com>
+//
+// Copyright (c) 2020 Yauheni Pakala
+//
+
+using Foundation;
 using System;
 using System.Globalization;
 using AccessCheckoutSDK;

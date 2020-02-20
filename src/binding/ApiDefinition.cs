@@ -1,8 +1,17 @@
-﻿using ObjCRuntime;
+﻿//
+// ApiDefinition.cs
+//
+// Author:
+//       Yauheni Pakala <evgeniy.pakalo@gmail.com>
+//
+// Copyright (c) 2020 Yauheni Pakala
+//
+
+using ObjCRuntime;
 using Foundation;
 using UIKit;
 
-namespace Xamarin.iOS.Worldpay.Access.Checkout
+namespace Xam.iOS.Worldpay.Access.Checkout
 {
     [BaseType(typeof(NSObject), Name = "_TtC17AccessCheckoutSDK12MySuperClass")]
     interface MySuperClass

@@ -1,13 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorldPaySample", "WorldPaySample\WorldPaySample.csproj", "{5369C01E-434B-45C8-BE02-3A8BD98CD214}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorldPaySample", "samples\Porting\WorldPaySample.csproj", "{5369C01E-434B-45C8-BE02-3A8BD98CD214}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccessCheckoutSDK", "AccessCheckoutSDK\AccessCheckoutSDK.csproj", "{ED1672FB-195F-4441-BF59-F5131CE1E540}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccessCheckoutSDK", "src\porting\AccessCheckoutSDK\AccessCheckoutSDK.csproj", "{ED1672FB-195F-4441-BF59-F5131CE1E540}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DebugApiResponse", "DebugApiResponse\DebugApiResponse.csproj", "{EC4B20C7-84C9-4FB2-8EFB-7028A3850761}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccessCheckoutSDK.Core", "AccessCheckoutSDK.Core\AccessCheckoutSDK.Core.csproj", "{EEA698B7-9D32-4BAA-AD7F-840DAEA7F4D1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccessCheckoutSDK.Core", "src\porting\AccessCheckoutSDK.Core\AccessCheckoutSDK.Core.csproj", "{EEA698B7-9D32-4BAA-AD7F-840DAEA7F4D1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,16 +34,6 @@ Global
 		{ED1672FB-195F-4441-BF59-F5131CE1E540}.Release|iPhone.ActiveCfg = Release|Any CPU
 		{ED1672FB-195F-4441-BF59-F5131CE1E540}.Release|iPhone.Build.0 = Release|Any CPU
 		{ED1672FB-195F-4441-BF59-F5131CE1E540}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EC4B20C7-84C9-4FB2-8EFB-7028A3850761}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
-		{EC4B20C7-84C9-4FB2-8EFB-7028A3850761}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
-		{EC4B20C7-84C9-4FB2-8EFB-7028A3850761}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
-		{EC4B20C7-84C9-4FB2-8EFB-7028A3850761}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
-		{EC4B20C7-84C9-4FB2-8EFB-7028A3850761}.Debug|iPhone.ActiveCfg = Debug|Any CPU
-		{EC4B20C7-84C9-4FB2-8EFB-7028A3850761}.Debug|iPhone.Build.0 = Debug|Any CPU
-		{EC4B20C7-84C9-4FB2-8EFB-7028A3850761}.Release|iPhone.ActiveCfg = Release|Any CPU
-		{EC4B20C7-84C9-4FB2-8EFB-7028A3850761}.Release|iPhone.Build.0 = Release|Any CPU
-		{EC4B20C7-84C9-4FB2-8EFB-7028A3850761}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EC4B20C7-84C9-4FB2-8EFB-7028A3850761}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EEA698B7-9D32-4BAA-AD7F-840DAEA7F4D1}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
 		{EEA698B7-9D32-4BAA-AD7F-840DAEA7F4D1}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
 		{EEA698B7-9D32-4BAA-AD7F-840DAEA7F4D1}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU

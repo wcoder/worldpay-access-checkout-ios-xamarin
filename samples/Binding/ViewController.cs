@@ -1,7 +1,16 @@
-﻿using Foundation;
+﻿//
+// ViewController.cs
+//
+// Author:
+//       Yauheni Pakala <evgeniy.pakalo@gmail.com>
+//
+// Copyright (c) 2020 Yauheni Pakala
+//
+
+using Foundation;
 using System;
 using UIKit;
-using Xamarin.iOS.Worldpay.Access.Checkout;
+using Xam.iOS.Worldpay.Access.Checkout;
 
 namespace SampleApp.iOS
 {
