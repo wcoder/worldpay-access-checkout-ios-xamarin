@@ -9,7 +9,7 @@
 
 using System;
 
-namespace AccessCheckoutSDK
+namespace AccessCheckoutSDK.Core
 {
     public class Result
     {
@@ -24,8 +24,8 @@ namespace AccessCheckoutSDK
             return null;
         }
     }
-    
-    public class Result<TSuccess, TFailure> : Result where TFailure : Exception 
+
+    public class Result<TSuccess, TFailure> : Result where TFailure : Exception
     {
         private readonly TSuccess _success;
         private readonly TFailure _failure;
@@ -40,11 +40,11 @@ namespace AccessCheckoutSDK
 
         public TSuccess Success => _success;
         public TFailure Failure => _failure;
-        
-        public static implicit operator ResultStatus(Result<TSuccess,TFailure> result) => result._status;
+
+        public static implicit operator ResultStatus(Result<TSuccess, TFailure> result) => result._status;
 
         public static implicit operator Exception(Result<TSuccess, TFailure> result) => result._failure;
-        
+
         public static implicit operator TSuccess(Result<TSuccess, TFailure> result) => result._success;
     }
 
@@ -66,7 +66,7 @@ namespace AccessCheckoutSDK
         {
             return new Result<TSuccess, TFailure>(success, null, ResultStatus.Success);
         }
-        
+
         /// <summary>
         /// A failure, storing a `Failure` value.
         ///

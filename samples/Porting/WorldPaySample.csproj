@@ -141,6 +141,10 @@
       <Project>{ed1672fb-195f-4441-bf59-f5131ce1e540}</Project>
       <Name>AccessCheckoutSDK</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\porting\AccessCheckoutSDK.Core\AccessCheckoutSDK.Core.csproj">
+      <Project>{EEA698B7-9D32-4BAA-AD7F-840DAEA7F4D1}</Project>
+      <Name>AccessCheckoutSDK.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

@@ -9,6 +9,7 @@
 
 using System;
 using Foundation;
+using AccessCheckoutSDK.Core;
 
 namespace AccessCheckoutSDK
 {

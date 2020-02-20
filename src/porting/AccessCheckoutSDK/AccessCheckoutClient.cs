@@ -9,7 +9,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
 using AccessCheckoutSDK.Core;
 using Foundation;
 
@@ -48,7 +47,7 @@ namespace AccessCheckoutSDK
         {
             var result = Result.Null<string, Exception>();
             var bundle = NSBundle.MainBundle; // TODO: check bundle
-            
+
             // line: 100
             var url = _discovery.VerifiedTokensSessionEndpoint;
             if (url != null)
@@ -108,14 +107,14 @@ namespace AccessCheckoutSDK
                 Identity = _merchantIdentifier
             };
             request.Body = Decoder.Encode(tokenRequest);
-            
+
             // Add user-agent header
             var userAgent = new UserAgent(bundle);
             request[UserAgent.HeaderName] = userAgent.HeaderValue;
 
             return request;
         }
-        
+
         // line: 58
         private static void CreateSession(NSUrlRequest request, NSUrlSession urlSession,
             Action<Result<string, Exception>> completionHandler)
@@ -123,7 +122,7 @@ namespace AccessCheckoutSDK
             urlSession.CreateDataTask(request, (data, response, error) =>
             {
                 var result = Result.Null<string, Exception>();
-                
+
                 if (data is NSData sessionData)
                 {
                     var verifiedTokensResponse = Decoder.DecodeJson<AccessCheckoutResponse>(sessionData);

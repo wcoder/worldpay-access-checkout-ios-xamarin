@@ -9,8 +9,8 @@
 
 using Foundation;
 using System;
-using System.Globalization;
 using AccessCheckoutSDK;
+using AccessCheckoutSDK.Core;
 using CoreFoundation;
 using UIKit;
 

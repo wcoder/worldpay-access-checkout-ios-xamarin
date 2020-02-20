@@ -10,14 +10,14 @@
 using System;
 using System.Collections.Generic;
 
-namespace AccessCheckoutSDK
+namespace AccessCheckoutSDK.Core
 {
     /// <summary>
     /// Describes an Access Checkout error
     /// </summary>
     public class AccessCheckoutClientError : Exception
     {
-        public AccessCheckoutClientError(string message, AccessCheckoutClientErrors error): base(message)
+        public AccessCheckoutClientError(string message, AccessCheckoutClientErrors error) : base(message)
         {
             ErrorName = error;
         }
@@ -36,7 +36,7 @@ namespace AccessCheckoutSDK
     public enum AccessCheckoutClientErrors
     {
         // MARK: Client errors
-    
+
         /// <summary>
         /// The body within the request is empty
         /// </summary>

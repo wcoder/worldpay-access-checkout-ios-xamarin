@@ -7,7 +7,7 @@
 // Copyright (c) 2020 Yauheni Pakala
 //
 
-namespace AccessCheckoutSDK
+namespace AccessCheckoutSDK.Core
 {
     /// <summary>
     /// Describes an Access Checkout validation error
