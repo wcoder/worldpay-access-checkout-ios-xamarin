@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Xamarin.iOS.Worldpay.Access.Checkout</id>
+    <version>1.2.1-alpha</version>
+    <title>Worldpay Access Checkout SDK for Xamarin.iOS</title>
+    <authors>Yauheni Pakala, Worldpay</authors>
+    <owners>wcoder</owners>
+    <license type="expression">MIT</license>
+    <projectUrl>https://github.com/wcoder/worldpay-access-checkout-ios-xamarin</projectUrl>
+    <repository type="git" url="https://github.com/wcoder/worldpay-access-checkout-ios-xamarin.git" branch="master" commit="3c9d9c041ca10c072a2ce4a2c45fb29903c88054" />
+    <iconUrl>https://avatars2.githubusercontent.com/u/7138566?s=200</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Worldpay Access Checkout SDK binding for Xamarin iOS.</description>
+    <copyright>Copyright © Yauheni Pakala 2020</copyright>
+    <tags>worldpay payments xamarin ios bindings porting</tags>
+    <releaseNotes>First release.</releaseNotes>
+  </metadata>
+  <files>
+    <file src="..\src\porting\AccessCheckoutSDK\bin\Release\AccessCheckoutSDK.Core.dll" target="lib\Xamarin.iOS10\AccessCheckoutSDK.Core.dll" />
+    <file src="..\src\porting\AccessCheckoutSDK\bin\Release\AccessCheckoutSDK.Core.pdb" target="lib\Xamarin.iOS10\AccessCheckoutSDK.Core.pdb" />
+    <file src="..\src\porting\AccessCheckoutSDK\bin\Release\AccessCheckoutSDK.dll" target="lib\Xamarin.iOS10\AccessCheckoutSDK.dll" />
+    <file src="..\src\porting\AccessCheckoutSDK\bin\Release\AccessCheckoutSDK.pdb" target="lib\Xamarin.iOS10\AccessCheckoutSDK.pdb" />
+  </files>
+</package>
