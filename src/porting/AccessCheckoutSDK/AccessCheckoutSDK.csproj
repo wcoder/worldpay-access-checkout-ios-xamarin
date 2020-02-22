@@ -47,6 +47,7 @@
     <Compile Include="IDiscovery.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PANView.cs" />
+    <Compile Include="ICardView.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="PANView.xib" />
